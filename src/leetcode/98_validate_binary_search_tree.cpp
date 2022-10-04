@@ -9,10 +9,6 @@ struct TreeNode {
   TreeNode(int x, TreeNode *left, TreeNode *right) : val(x), left(left), right(right) {}
 };
 
-bool isValidBST(TreeNode* root) {
-  return check(root, nullptr, nullptr);
-}
-
 bool check(TreeNode* node, int* minVal, int* maxVal) {
   if (node == nullptr) {
     return 1;
@@ -22,6 +18,10 @@ bool check(TreeNode* node, int* minVal, int* maxVal) {
   }
   return check(node->left, minVal, &node->val) &&
          check(node->right, &node->val, maxVal);
+}
+
+bool isValidBST(TreeNode* root) {
+  return check(root, nullptr, nullptr);
 }
 
 int main() {

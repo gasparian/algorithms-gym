@@ -5,12 +5,12 @@ bool isAnagram(std::string s, std::string t) {
         return false;
     }
     int alphabet[26] = {0};
-    for ( int i=0; i < s.size(); i++ ) {
+    for ( int i=0; i < (int)s.size(); i++ ) {
         // 97 is the offset since 'a' == 97 Dec
         int idx = (int)s[i] - 97;
         alphabet[idx]++;
     }
-    for ( int i=0; i < t.size(); i++ ) {
+    for ( int i=0; i < (int)t.size(); i++ ) {
         int idx = (int)t[i] - 97;
         alphabet[idx]--;
         if ( alphabet[idx] < 0 ) {

@@ -6,13 +6,7 @@ struct TreeNode {
     TreeNode *right;
     TreeNode(int x) : val(x), left(NULL), right(NULL) {}
 };
-
-int sumEvenGrandparent(TreeNode* root) {
-    int summ = 0;
-    check(root, summ);
-    return summ;
-}
-    
+ 
 void check(TreeNode* node, int &summ, bool even_gp = false, bool even_p = false) {
     if ( even_gp)
         summ += node->val;
@@ -26,6 +20,12 @@ void check(TreeNode* node, int &summ, bool even_gp = false, bool even_p = false)
         check(node->left, summ, even_gp, even_p);
     if ( node->right != NULL ) 
         check(node->right, summ, even_gp, even_p);
+}
+
+int sumEvenGrandparent(TreeNode* root) {
+    int summ = 0;
+    check(root, summ);
+    return summ;
 }
 
 int main() {

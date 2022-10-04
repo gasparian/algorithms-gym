@@ -8,6 +8,19 @@ struct ListNode {
   ListNode(int x, ListNode *next) : val(x), next(next) {}
 };
 
+ListNode* reverseList(ListNode* head) {
+  ListNode* dummy = nullptr; 
+  ListNode* node = head;
+  ListNode* tmp; 
+  while (node != nullptr) {
+    tmp = node->next;
+    node->next = dummy;
+    dummy = node;
+    node = tmp;
+  }
+  return dummy;
+}   
+
 bool isPalindrome(ListNode* head) {
   if (head == nullptr || head->next == nullptr) {
     return true;
@@ -30,19 +43,6 @@ bool isPalindrome(ListNode* head) {
   }
   return true;
 }
-    
-ListNode* reverseList(ListNode* head) {
-  ListNode* dummy = nullptr; 
-  ListNode* node = head;
-  ListNode* tmp; 
-  while (node != nullptr) {
-    tmp = node->next;
-    node->next = dummy;
-    dummy = node;
-    node = tmp;
-  }
-  return dummy;
-}   
 
 int main() {
     // [1,2,2,1] // inp

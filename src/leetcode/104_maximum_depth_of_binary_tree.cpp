@@ -8,14 +8,7 @@ struct TreeNode {
   TreeNode(int x) : val(x), left(nullptr), right(nullptr) {}
   TreeNode(int x, TreeNode *left, TreeNode *right) : val(x), left(left), right(right) {}
 };
-
-int maxDepth(TreeNode* root) {
-  if (!root) {
-    return 0;
-  }
-  return traverse(root, 1, 1);
-}
-    
+ 
 int traverse(TreeNode* node, int depth, int maxDepth) {
   if (depth > maxDepth) {
     return depth;
@@ -27,6 +20,13 @@ int traverse(TreeNode* node, int depth, int maxDepth) {
     maxDepth = traverse(node->right, depth + 1, maxDepth);
   }
   return maxDepth;
+}
+
+int maxDepth(TreeNode* root) {
+  if (!root) {
+    return 0;
+  }
+  return traverse(root, 1, 1);
 }
 
 int main() {

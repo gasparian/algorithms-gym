@@ -5,7 +5,7 @@ int hammingWeight(uint32_t n) {
     return 0;
   }
   int sum = 0;
-  for (int i = 0; i < sizeof(n)*8; i++) {
+  for (int i = 0; i < (int)sizeof(n)*8; i++) {
     sum += n & 1;
     n = n >> 1;
   }

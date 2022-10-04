@@ -15,7 +15,7 @@ int removeDuplicates(std::vector<int>& nums) {
         }
     }
     
-    return nums.size();
+    return static_cast<int>(nums.size());
 }
 
 int main() {

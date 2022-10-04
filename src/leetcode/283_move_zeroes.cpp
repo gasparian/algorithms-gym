@@ -1,18 +1,18 @@
 #include <bits/stdc++.h>
-
-void moveZeroes(std::vector<int>& nums) {
-    for ( int lastNonZero=0, cur=0; cur < nums.size(); cur++ ) {
-        if ( nums[cur] != 0 ) {
-            swap(nums[lastNonZero++], nums[cur]);
-        }
-    }
-}
-    
+ 
 void swap(int& x, int& y) {
     if ( x != y ) {
         x = x ^ y;
         y = x ^ y;
         x = x ^ y;
+    }
+}
+
+void moveZeroes(std::vector<int>& nums) {
+    for ( int lastNonZero=0, cur=0; cur < (int)nums.size(); cur++ ) {
+        if ( nums[cur] != 0 ) {
+            swap(nums[lastNonZero++], nums[cur]);
+        }
     }
 }
 

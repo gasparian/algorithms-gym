@@ -19,7 +19,7 @@ std::vector<std::vector<int>> levelOrder(TreeNode* root) {
   std::queue<TreeNode*> q;
   q.push(root);
   while (!q.empty()) {
-      qsize = q.size();
+      qsize = static_cast<int>(q.size());
       std::vector<int> v;
       for (int i=0; i < qsize; i++) {
           curr = q.front();

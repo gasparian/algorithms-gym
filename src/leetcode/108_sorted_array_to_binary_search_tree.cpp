@@ -25,7 +25,7 @@ TreeNode* sortedArrayToBST(std::vector<int>& nums) {
   if (!nums.size()) {
     return nullptr;
   }
-  return makeSplit(nums, 0, nums.size()-1); 
+  return makeSplit(nums, 0, (int)nums.size()-1); 
 }
 
 int main() {

@@ -2,10 +2,10 @@
 
 int firstUniqChar(std::string s) {
     std::unordered_map<char, int> m;
-    if ( s.size() == 1 ) {
+    if ( (int)s.size() == 1 ) {
         return 0;
     }
-    for ( int i=0; i < s.size(); i++ ) {
+    for ( int i=0; i < (int)s.size(); i++ ) {
         auto res = m.find(s[i]);
         if ( res == m.end() ) {
             m[s[i]] = i;

@@ -1,7 +1,7 @@
 .ONESHELL:
 SHELL := /bin/bash
 .SILENT:
-DEFAULT_GOAL := build
+DEFAULT_GOAL := buildAll
 
 GCC:=g++
 ifeq ($(shell uname -s), Darwin)
@@ -19,5 +19,9 @@ done
 endef
 
 .PHONY: build
-build:
+buildAll:
 	$(call compile_all_tasks)
+
+.PHONY: build
+build:
+	$(GCC) -std=c++11 -O2 -Wall ${target} -o $${target%.*}.o

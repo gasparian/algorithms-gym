@@ -1,22 +1,5 @@
 #include <bits/stdc++.h>
-
-void rotate(std::vector<std::vector<int>>& matrix) {
-    int n = matrix.size();
-    for ( int i=0; i < n; i++ ) {
-        reverse(matrix[i], 0, n-1);
-    }
-    
-    // swap values
-    for ( int i=0; i < (n-1); i++ ) {
-        for ( int j=0; j < (n-1); j++ ) {
-            // exclude indeces on the main diagonal
-            if ( j < (n-1-i) ) {
-                swap(matrix[i][j], matrix[n-1-j][n-1-i]);
-            }
-        }
-    }
-}
-    
+ 
 void swap(int& x, int& y) {
     if ( x != y ) {
         x = x ^ y;
@@ -33,6 +16,23 @@ void reverse(std::vector<int>& nums, int start, int end) {
         nums[end] = temp;
         start++;
         end--;
+    }
+}
+
+void rotate(std::vector<std::vector<int>>& matrix) {
+    int n = static_cast<int>(matrix.size());
+    for ( int i=0; i < n; i++ ) {
+        reverse(matrix[i], 0, n-1);
+    }
+    
+    // swap values
+    for ( int i=0; i < (n-1); i++ ) {
+        for ( int j=0; j < (n-1); j++ ) {
+            // exclude indeces on the main diagonal
+            if ( j < (n-1-i) ) {
+                swap(matrix[i][j], matrix[n-1-j][n-1-i]);
+            }
+        }
     }
 }
 

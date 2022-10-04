@@ -2,8 +2,8 @@
 
 std::vector<std::vector<int>> matrixBlockSum(std::vector<std::vector<int>>& mat, int K) {
     std::vector<std::vector<int>> res;
-    int n = mat.size();
-    int m = mat[0].size();
+    int n = static_cast<int>(mat.size());
+    int m = static_cast<int>(mat[0].size());
     res.resize(n, std::vector<int>(m));
     for ( int i=0; i < n; ++i ) {
         for ( int j=0; j < m; ++j ) {

@@ -1,19 +1,16 @@
 #include <bits/stdc++.h>
 
 int singleNumber(std::vector<int>& nums) {
-    std::unordered_set<int> lookUp;
-    for ( int i=0; i < nums.size(); i++ ) {
-        std::unordered_set<int>::const_iterator got = lookUp.find(nums[i]);
-        if ( got == lookUp.end() ) {
-            lookUp.insert(nums[i]);
-        } else {
-            lookUp.erase(nums[i]);
-        }
-    }
-    return *(lookUp.begin());
+  int res = nums[0];
+  for (int i = 1; i < (int)nums.size(); i++) {
+    res ^= nums[i];
+  }
+  return res;
 }
 
 int main() {
-    // [2,2,1] --> 1
-    return 0;
+  std::vector<int> inp = {2, 2, 1};
+  int res = singleNumber(inp);
+  assert(res == 1);
+  return 0;
 }

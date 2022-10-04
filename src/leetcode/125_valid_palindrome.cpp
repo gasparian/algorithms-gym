@@ -1,11 +1,11 @@
 #include <bits/stdc++.h>
 
 bool isPalindrome(std::string s) {   
-   if (s.size() <= 1) {
+   if ((int)s.size() <= 1) {
        return true;
    }
    char ch1, ch2; 
-   for (int i = 0, j=s.size()-1; i < j;) {
+   for (int i = 0, j=(int)s.size()-1; i < j;) {
       if (!isalnum(s[i])) {
           i++;
           continue;

@@ -3,7 +3,7 @@
 std::vector<int> twoSum(std::vector<int>& nums, int target) {
     std::unordered_map<int, int> m;
     std::vector<int> res(2);
-    for ( int i=0; i < nums.size(); i++ ) {
+    for ( int i=0; i < (int)nums.size(); i++ ) {
         int diff = target - nums[i];
         std::unordered_map<int, int>::const_iterator it = m.find(diff);
         if ( (it != m.end()) && (it->second != i) ) {
