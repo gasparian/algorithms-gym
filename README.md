@@ -1,25 +1,52 @@
 # algorithms-gym
-Repo containing algorithmic problems solutions and data structures implementations  
+Repo containing various algorithmic problems solutions and data structures implementations  
+
+## Project structure  
+```
+└── src
+    ├── algorithms
+    │   ├── cpp
+    │   └── python
+    ├── common
+    │   ├── cpp
+    │   └── python
+    ├── data_structures
+    │   ├── cpp
+    │   └── python
+    └── leetcode
+        ├── cpp
+        └── python
+```
+Each section split by the language, and the `common` folder should contain some generic functionality that could be reused across the code.  
 
 ## How to run  
 
+### C++
+
 *For mac-os users:*  
-Since mac-os uses `clang` by default and here I'm using `bits/stdc++.h` header with all necessary imports, you'll need to install `gcc` and it will be used for compiling:  
+Since mac-os uses `clang` by default and here I sometimes use `bits/stdc++.h` header, you'll need to install `gcc` to sue it for compiling:  
 ```
 brew install gcc
 ```  
 
-Run `make` to compile all the tasks one by one. Binaries would be stored alongside with source code with the `*.{o|out}` ext.  
-To run compiled program, navigate to the corresponding folder and execute binary (it will read needed input file from the same folder you are in):  
+Then compile the program:  
 ```
-cd ./src/leetcode/191_number_of_bits.o
+make build target=./src/leetcode/cpp/191_number_of_bits.cpp
+```  
+and execute bunary:  
+```
+./src/leetcode/cpp/191_number_of_bits.o
+```  
+or:  
+```
+cd ./src/leetcode/cpp && ./191_number_of_bits.o
 ```  
 
-Or compile manually, after navigating to the task folder:  
-```
-make build target=./src/leetcode/191_number_of_bits.cpp
-```  
+### Python  
 
-*Hint:*  
-Good tutorial fo C++ syntax which could be useful when you're not using it for a while: [C++ by example](https://cppbyexample.com/)  
+I've used `python3.8`. You can install and activate any version via [pyenv](https://github.com/pyenv/pyenv).  
+To run the code, just call: `python3 <script_name>.py`.  
 
+### Links  
+
+ - Good tutorial fo C++ syntax which could be useful when you're not using it for a while: [C++ by example](https://cppbyexample.com/)  
