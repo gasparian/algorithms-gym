@@ -1,17 +1,16 @@
 from typing import Any, Callable, List, Optional
 
+
 class Node:
     def __init__(self, key: Any = None, val: Any = None, next = None) -> None:
         self.key = key
         self.val = val
         self.next: Optional[Node] = next
 
-class NaiveHash:
-    def __init__(self) -> None:
-        self._a = ord('A')
 
-    def __call__(self, key: str, *args: Any, **kwds: Any) -> int:
-        return ord(key.upper()) - self._a
+def naive_hash(key: str) -> int:
+    return ord(key.upper()) - ord('A')
+
 
 class Map:
     def __init__(self, hash_func: Callable = hash) -> None:
@@ -78,10 +77,17 @@ class Map:
         return self._n_entries
 
 if __name__ == "__main__":
-    m = Map(NaiveHash())
+    m = Map(naive_hash)
     m["a"] = 1
     m["A"] = 2
     m["b"] = 2
     m["c"] = 3
     del m["c"]
-    print(m["a"], m["A"], m["c"], len(m), m._cap)
+
+    assert(m["a"] == 1)
+    assert(m["A"] == 2)
+    assert(m["c"] == None)
+    assert(len(m) == 3)
+    assert(m._cap == 2)
+
+    print("Tests passed!")
