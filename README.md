@@ -31,7 +31,7 @@ brew install gcc
 
 Then compile the program:  
 ```
-make build target=./src/leetcode/cpp/191_number_of_bits.cpp
+make compile target=./src/leetcode/cpp/191_number_of_bits.cpp
 ```  
 and execute bunary:  
 ```
@@ -42,10 +42,22 @@ or:
 cd ./src/leetcode/cpp && ./191_number_of_bits.o
 ```  
 
+The command to compile looks like this (the same as for Yandex.Contest platform):  
+```
+g++ -lm -O2 -fno-stack-limit -std=c++1z -x c++ <code> -o <object file name>
+```  
+
 ### Python  
 
 I've used `python3.8`. You can install and activate any version via [pyenv](https://github.com/pyenv/pyenv).  
-To run the code, just call: `python3 <script_name>.py`.  
+To run the code, you can just call: 
+```
+python3 <script_name>.py
+```  
+Or compile the bytecode first like that: 
+```
+py_compile.compile(файл, doraise=True)
+```  
 
 ### Links  
 
