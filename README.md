@@ -18,32 +18,39 @@ Each directory may contain multiple folders with implementations in different la
 
 *For mac-os users:*  
 Since mac-os uses `clang` (which is good for the "real" development, btw) by default and here I sometimes use `bits/stdc++.h` header, you'll need to install `gcc` for using that header:  
-```
+```shell
 brew install gcc
 ```  
 The command to compile looks like this (the same as for most competitive programming platforms):  
-```
+```shell
 g++ -lm -O2 -fno-stack-limit -std=c++1z -x c++ <code> -o <executable>
-```  
+```
 `clang` and "newer" C++:  
 ```
 clang++ --std=c++20 -O3 -fsanitize=address,undefined -Wall -Wextra -Werror <code> -o <executable>
 ```  
 Running with test examples:  
-```
+```shell
 ./my_object_file < test.txt
 ```  
 
 ### Python  
 
 I've used `python3.8`. You can install and activate any version via [pyenv](https://github.com/pyenv/pyenv).  
-To run the code, you can just call: 
-```
+To run the code, you can just call:  
+```shell
 python3 <file>
-```  
-Or compile the bytecode first like that: 
 ```
+Or compile the bytecode first like that:  
+```shell
 py_compile.compile(<file>, doraise=True)
+```  
+
+### Go  
+
+Run tests:  
+```shell
+go test -v -race <file>
 ```  
 
 ### Links  
