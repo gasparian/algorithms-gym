@@ -2,15 +2,16 @@
 Repo containing various algorithmic problems solutions and data structures implementations  
 
 ## Project structure  
+Directories in the `src` split by topic/course/etc.:  
 ```
 └── src
     ├── algorithms
     ├── common
-    ├── data_structures
-    └── leetcode
     └── cses
-```
-Each directory may contain multiple folders with implementations in different languages. The `common` folder should contain some generic functionality that could be reused across the code, like reading from `stdin`.  
+    └── ...
+```  
+Each directory may contain multiple folders with implementations in different languages.  
+The `common` folder should contain some generic functionality that could be reused across the code, like reading from `stdin` or file.  
 
 ## How to run  
 
